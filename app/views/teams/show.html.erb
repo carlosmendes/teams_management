@@ -1,0 +1,19 @@
+<h1>Team <%= @team.name %></h1>
+
+
+<h2>Players (<%= @team.players.count %>) | Players >= 1M (<%= @players_1M.count %>)</h2>
+
+<% @team.players.each do |player| %>
+  <div class="text-danger"><%= player.name %></div>
+<% end %>
+
+
+<h2>Add New Player</h2>
+
+<%= simple_form_for [@team, @player] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :position %>
+  <%= f.input :value %>
+  <%= f.input :photo_url %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

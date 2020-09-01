@@ -1,0 +1,9 @@
+<%= content_for :menu, 'teams' %>
+
+<h1>Teams</h1>
+
+<div><%= link_to 'New Team', new_team_path %></div>
+
+<% @teams.each do |team| %>
+  <div><%= link_to team.name, team_path(team), class: 'team-link' %></div>
+<% end %>

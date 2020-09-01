@@ -1,0 +1,8 @@
+<h1>Create Team</h1>
+
+<%= simple_form_for @team do |f| %>
+  <%= f.input :name %>
+  <%= f.input :city %>
+  <%= f.input :number_fans %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

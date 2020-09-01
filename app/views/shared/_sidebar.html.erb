@@ -1,0 +1,13 @@
+<div id="sidebar">
+  <div><%= link_to t(:home), root_path %></div>
+  <hr>
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to t(:login), new_user_session_path %>
+    </div>
+  <% end %>
+</div>
